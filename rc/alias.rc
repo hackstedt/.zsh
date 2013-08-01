@@ -14,8 +14,9 @@ alias cd..="cd .."
 alias rg="rgrep --color -ns"
 
 # alias rs="bundle exec rails s"
-alias ts="RAILS_ENV=production RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4 bundle exec thin start -p 3000"
-alias rs="RAILS_ENV=production RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4 bundle exec rails s"
+malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
+alias ts="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec thin start -p 3000"
+alias rs="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec rails s"
 alias rc="bundle exec rails c"
 alias bbb="echo '\e[0;36mrun: bundle install... \e[0m';
             bundle install;
