@@ -26,14 +26,6 @@ alias bbb="
           echo '\e[0;36mrun: bundle exec rails s (with gc-malloc-settings)... \e[0m';
           rs
           "
-alias smg="/home/s/bin/smartgithg-4_5_6/bin/smartgithg.sh --open ."
 
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
-
-if [ -x /usr/libexec/mc/mc-wrapper.sh ]
-then
-	alias mc='. /usr/libexec/mc/mc-wrapper.sh'
-fi
-
-alias x11="ssh svenmahl@x11.informatik.uni-bremen.de"
