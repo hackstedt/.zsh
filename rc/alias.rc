@@ -14,7 +14,9 @@ alias cd..="cd .."
 alias rg="rgrep --color -ns"
 
 # alias rs="bundle exec rails s"
-malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
+if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
+	malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
+fi
 alias ts="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec thin start -p 3000"
 alias rs="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec rails s"
 alias rc="bundle exec rails c"

@@ -33,7 +33,9 @@ for file in $HOME/.zsh/rc/*.rc; do
 	source $file
 done
 
-source ~/.rvm/scripts/rvm
+if [[ -e ~/.rvm/scripts/rvm ]]; then
+  source ~/.rvm/scripts/rvm
+fi
 source ~/.profile
 
 # Regarding to the zsh-history-substring-search - Readme:
