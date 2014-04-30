@@ -57,3 +57,7 @@ bindkey '\e[B' history-substring-search-down              # DOWN
 # Bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+echo $STY | egrep -e "[0-9]+\.vim$" && vim
+echo $STY | egrep -e "[0-9]+\.rs$" && bundle exec rails s
+echo $STY | egrep -e "[0-9]+\.guard$" && bundle exec guard
