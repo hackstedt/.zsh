@@ -34,9 +34,17 @@ This .zshrc is, obviously, free software and licensed under GPL v3
 ## Quick note
 
 Make zsh the default shell:
-$ chsh -s $(which zsh)
 
-Follow the instructions on this side, to install zsh-syntax-highlighting:
+        chsh -s $(which zsh)
+
+Make the plugin directory:
+
+        mkdir ~/.zsh/plugins 
+
+Follow the instructions on this side, to install (in the folder you just made) the zsh-syntax-highlighting:
+
 https://github.com/zsh-users/zsh-syntax-highlighting
-To to tweak this:
+
+To to tweak the plugin mentioned above (also in the plugin folder):
+
 https://github.com/zsh-users/zsh-syntax-highlighting
