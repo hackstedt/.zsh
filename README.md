@@ -39,7 +39,12 @@ Make zsh the default shell:
 
 Make the plugin directory:
 
-        mkdir ~/.zsh/plugins 
+        mkdir ~/.zsh/plugins/zsh-syntax-highlighting
+
+and for the plugins below:
+
+        mkdir ~/.zsh/plugins/zsh-syntax-highlighting
+        mkdir ~/.zsh/plugins/zsh-history-substring-search
 
 Follow the instructions on this side, to install (in the folder you just made) the zsh-syntax-highlighting:
 
@@ -47,5 +52,12 @@ https://github.com/zsh-users/zsh-syntax-highlighting
 
 Shortcut:
 
-        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins
-        
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
+
+Follow the instructions on this side, to install (in the folder you just made) the zsh-history-substring-search:
+
+https://github.com/zsh-users/zsh-history-substring-search
+
+Shortcut:
+
+        git clone git://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/plugins/zsh-history-substring-search
