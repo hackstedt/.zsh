@@ -45,6 +45,7 @@ Follow the instructions on this side, to install (in the folder you just made) t
 
 https://github.com/zsh-users/zsh-syntax-highlighting
 
-To to tweak the plugin mentioned above (also in the plugin folder):
+Shortcut:
 
-https://github.com/zsh-users/zsh-syntax-highlighting
+        git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins
+        
