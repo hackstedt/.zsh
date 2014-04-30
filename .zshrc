@@ -33,7 +33,9 @@ for file in $HOME/.zsh/rc/*.rc; do
 	source $file
 done
 
-source ~/.rvm/scripts/rvm
+if [[ -e ~/.rvm/scripts/rvm ]]; then
+  source ~/.rvm/scripts/rvm
+fi
 source ~/.profile
 
 # Regarding to the zsh-history-substring-search - Readme:
@@ -46,6 +48,9 @@ for file in $HOME/.zsh/plugins/*/*.zsh; do
     source $file
   fi
 done
+
+# Activate th brackets highlighter as well
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Bind UP and DOWN arrow keys
 zmodload zsh/terminfo
