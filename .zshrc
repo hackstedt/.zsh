@@ -49,7 +49,7 @@ for file in $HOME/.zsh/plugins/*/*.zsh; do
   fi
 done
 
-# Activate th brackets highlighter as well
+# Activate the brackets highlighter as well
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Bind UP and DOWN arrow keys
