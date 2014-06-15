@@ -1,4 +1,4 @@
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games:$HOME/.rvm/bin
+PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:$HOME/.rvm/bin
 EDITOR=vim
 
 # My functions (don't forget to modify fpath before call compinit !!)
