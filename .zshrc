@@ -49,7 +49,7 @@ for file in $HOME/.zsh/plugins/*/*.zsh; do
   fi
 done
 
-# Activate th brackets highlighter as well
+# Activate the brackets highlighter as well
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Bind UP and DOWN arrow keys
@@ -62,3 +62,7 @@ bindkey '\e[B' history-substring-search-down              # DOWN
 # Bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+echo $STY | egrep -e "[0-9]+\.vim$" && vim
+echo $STY | egrep -e "[0-9]+\.rs$" && bundle exec rails s
+echo $STY | egrep -e "[0-9]+\.guard$" && bundle exec guard
