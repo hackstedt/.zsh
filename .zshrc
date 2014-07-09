@@ -41,9 +41,7 @@ source ~/.profile
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ...and resource the other plugins afterwards
 for file in $HOME/.zsh/plugins/*/*.zsh; do
-  if [[ ! "$file" =~ "zsh-syntax-highlighting" ]]; then
-    source $file
-  fi
+  [[ ! "$file" =~ "zsh-syntax-highlighting" ]] &&  source $file
 done
 
 # Activate the brackets highlighter as well
