@@ -1,5 +1,5 @@
-PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:$HOME/.rvm/bin
 EDITOR=vim
+PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:$HOME/.rvm/bin:$PATH
 
 # My functions (don't forget to modify fpath before call compinit !!)
 fpath=($HOME/.zsh/functions $fpath)
@@ -33,9 +33,6 @@ for file in $HOME/.zsh/rc/*.rc; do
 	source $file
 done
 
-if [[ -e ~/.rvm/scripts/rvm ]]; then
-  source ~/.rvm/scripts/rvm
-fi
 source ~/.profile
 
 # Regarding to the zsh-history-substring-search - Readme:
@@ -66,3 +63,4 @@ bindkey -M vicmd 'j' history-substring-search-down
 echo $STY | egrep -e "[0-9]+\.vim$" && vim
 echo $STY | egrep -e "[0-9]+\.rs$" && bundle exec rails s
 echo $STY | egrep -e "[0-9]+\.guard$" && bundle exec guard
+[[ -s "$HOME/.rvm/scripts/rvm"  ]] && source "$HOME/.rvm/scripts/rvm"
