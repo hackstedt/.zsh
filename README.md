@@ -4,7 +4,7 @@ This repo provides a customized .zshrc and .zsh/ config folder.
 
 ## Setup
 
-In order use this repo, do the following in your home directory
+In order to use this repo, do the following in your home directory
 
 Backup (or delete, if you haven't made any changes so far) your current .zshrc and, if present, .zsh/ directory
 
@@ -37,9 +37,9 @@ Make zsh the default shell:
 
         chsh -s $(which zsh)
 
-Make the plugin directory:
+Create the plugin directory:
 
-        mkdir ~/.zsh/plugins/zsh-syntax-highlighting
+        mkdir ~/.zsh/plugins/
 
 and for the plugins below:
 
