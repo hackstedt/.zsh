@@ -11,7 +11,7 @@ alias s="sudo"
 alias cvs="cvs -z3"
 alias reboot="shutdown -r now"
 alias cd..="cd .."
-alias rg="rgrep --color -ns"
+rg () {rgrep --color -ns $1 .}
 
 # alias rs="bundle exec rails s"
 if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
