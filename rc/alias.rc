@@ -12,6 +12,7 @@ alias cvs="cvs -z3"
 alias reboot="shutdown -r now"
 alias cd..="cd .."
 rg () {rgrep --color -ns $1 .}
+rrg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp} $1 .}
 
 # alias rs="bundle exec rails s"
 if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
