@@ -12,15 +12,16 @@ alias cvs="cvs -z3"
 alias reboot="shutdown -r now"
 alias cd..="cd .."
 rg () {rgrep --color -ns $1 .}
-rrg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp} $1 .}
+rrg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp,app/assets/fonts} $1 .}
 
 # alias rs="bundle exec rails s"
 if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
 	malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
 fi
 alias ts="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec thin start -p 3000"
-alias rs="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec rails s"
+alias rs="RAILS_ENV=development bundle exec rails s"
 alias rc="bundle exec rails c"
+alias rcs="bundle exec rails c --sandbox"
 alias bbb="echo '\e[0;36mrun: bundle install... \e[0m';
             bundle install;
             echo '\e[0;36mrun: bundle exec rails rake db:migrate... \e[0m';
@@ -30,6 +31,8 @@ alias bbb="echo '\e[0;36mrun: bundle install... \e[0m';
             echo '\e[0;36mrun: bundle exec rails s (with gc-malloc-settings)... \e[0m';
             rs"
 alias tm="tunnelmagick"
+
+alias sshstaging='ssh -t deploy@jenkins.yogaeasy.de "cd /var/www/sven.staging.yogaeasy.de/current/; /bin/bash -l"'
 
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
@@ -47,3 +50,4 @@ alias gst="git stash"
 alias gstp="git stash pop"
 alias gl="git pull --rebase"
 alias gh="git push"
+alias gim="vim -p \$(git status --short | sed -n 's/^ M //p')"
