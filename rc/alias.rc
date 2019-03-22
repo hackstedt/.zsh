@@ -1,4 +1,3 @@
-alias ll="ls -aFlh --group-directories-first --color=auto"
 alias rm="rm -i"
 alias cp="cp -i"
 alias ls="ls --color=auto"
