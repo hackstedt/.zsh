@@ -12,6 +12,7 @@ alias s="sudo"
 alias cvs="cvs -z3"
 alias reboot="shutdown -r now"
 alias cd..="cd .."
+alias mkdir_date="mkdir $(date +'%d_%m_%Y-%H_%MUhr')"
 rg () {rgrep --color -ns $1 .}
 rrg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp,app/assets/fonts} $1 .}
 
