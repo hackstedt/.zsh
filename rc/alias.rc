@@ -32,8 +32,6 @@ alias bbb="echo '\e[0;36mrun: bundle install... \e[0m';
             rs"
 alias tm="tunnelmagick"
 
-alias sshstaging='ssh -t deploy@jenkins.yogaeasy.de "cd /var/www/sven.staging.yogaeasy.de/current/; /bin/bash -l"'
-
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
 
