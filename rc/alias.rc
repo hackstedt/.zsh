@@ -22,6 +22,8 @@ alias 7777="python -m SimpleHTTPServer 7777"
 rg () {rgrep --color -ns $1 .}
 rrg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp,app/assets/fonts} $1 .}
 
+bu () {cp $1{,~`date +%Y-%m-%d_%Hh%M`}}
+
 # alias rs="bundle exec rails s"
 if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
 	malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
