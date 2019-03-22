@@ -30,9 +30,6 @@ alias 7777="python -m SimpleHTTPServer 7777"
 
 rg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp} $1 .}
 
-g () {ag -A 3 -B 2 -W201 $*}
-gs () {ag -A 0 -B 0 -W201 $*}
-
 fim () {
   if [[ "$1" =~ ^[0-9]+$ ]]; then
     vim $(sed -n "${1}p" ~/.fimds)
