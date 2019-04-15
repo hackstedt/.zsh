@@ -64,7 +64,7 @@ alias tmm="tunnelmagick `date +%s`"
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
 
-vl=$(find /usr/share/vim -name 'less.vim')
+vl=$(find /usr/share/vim -name 'less.vim' | grep macros)
 if [ ! -z $vl  ]; then
   alias vl="vim -u $vl"
 fi
