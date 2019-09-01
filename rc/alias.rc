@@ -6,6 +6,7 @@ alias lt="ls -aFlhtr --group-directories-first --color=auto --time-style=+'%d.%m
 alias cl="clear"
 alias i="sudo apt-get install"
 alias acs="apt-cache search"
+alias acp="apt-cache policy"
 alias uu="sudo apt-get update; sudo apt-get upgrade"
 alias aptclean="s apt-get check; s apt-get clean; s apt-get autoremove"
 alias s="sudo"
