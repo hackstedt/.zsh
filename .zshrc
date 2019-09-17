@@ -38,22 +38,20 @@ source ~/.profile
 # Regarding to the zsh-history-substring-search - Readme:
 # "If you want to use zsh-syntax-highlighting along with this script,
 # then make sure that you load it before you load this script" Therefore...
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# ...and resource the other plugins afterwards
-for file in $HOME/.zsh/plugins/*/*.zsh; do
-  [[ ! "$file" =~ "zsh-syntax-highlighting" ]] &&  source $file
-done
 
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Activate the brackets highlighter as well
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+# ...and resource the other plugins afterwards
+
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # Bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '\e[A' history-substring-search-up                # UP
 bindkey '\e[B' history-substring-search-down              # DOWN
-
 # Bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
