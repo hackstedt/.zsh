@@ -4,9 +4,6 @@ PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:$HOME/.rvm/bin:$PATH
 # My functions (don't forget to modify fpath before call compinit !!)
 fpath=($HOME/.zsh/functions $fpath)
 
-autoload -U zutil
-autoload -U compinit
-autoload -U complist
 
 bindkey ';5A' history-search-backward   # Ctr+UP
 bindkey ';5B' history-search-forward    # Ctr+DOWN
@@ -22,13 +19,6 @@ bindkey '\eOF' end-of-line
 bindkey ';2D' backward-word
 bindkey ';2C' forward-word
 
-# Activation
-compinit
-
-# Resource files
-for file in $HOME/.zsh/rc/*.rc; do
-	source $file
-done
 
 source ~/.profile
 
@@ -54,6 +44,19 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 eval $( dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
+
+# Resource files
+for file in $HOME/.zsh/rc/*.rc; do
+	source $file
+done
+
+
+autoload -U zutil
+autoload colors; colors
+autoload -Uz compinit; compinit
+autoload -Uz promptinit; promptinit
+autoload -U complist
+
 
 echo $STY | egrep -e "[0-9]+\.vim$" && vim
 echo $STY | egrep -e "[0-9]+\.rs$" && bundle exec rails s
