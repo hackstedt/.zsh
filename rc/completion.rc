@@ -11,3 +11,18 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
+
+# Group results by category
+zstyle ':completion:*' group-name ''
+
+# Cursor doesn't go to the end, and completion is done from both ends.
+setopt complete_in_word
+
+# kill completion
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*:kill:*' insert-ids single
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:processes' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
