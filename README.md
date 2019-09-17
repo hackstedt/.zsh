@@ -37,14 +37,15 @@ Make zsh the default shell:
 
         chsh -s $(which zsh)
 
-Create the plugin directory:
+Create the plugin directory (if it's not created automatically by the steps below):
 
         mkdir ~/.zsh/plugins/
 
-and for the plugins below:
+and for the plugins below (if it's not created automatically by the steps below):
 
         mkdir ~/.zsh/plugins/zsh-syntax-highlighting
         mkdir ~/.zsh/plugins/zsh-history-substring-search
+        mkdir ~/.zsh/plugins/LS_COLORS
 
 Follow the instructions on this side, to install (in the folder you just made) the zsh-syntax-highlighting:
 
@@ -61,3 +62,11 @@ https://github.com/zsh-users/zsh-history-substring-search
 Shortcut:
 
         git clone git://github.com/zsh-users/zsh-history-substring-search.git ~/.zsh/plugins/zsh-history-substring-search
+
+Follow the instructions on this side, to install (in the folder you just made) the LS_COLORS:
+
+https://github.com/trapd00r/LS_COLORS
+
+Shortcut:
+
+        git clone git://github.com/trapd00r/LS_COLORS.git ~/.zsh/plugins/LS_COLORS

@@ -4,9 +4,6 @@ PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:$HOME/.rvm/bin:$PATH
 # My functions (don't forget to modify fpath before call compinit !!)
 fpath=($HOME/.zsh/functions $fpath)
 
-# colors
-eval `dircolors $HOME/.zsh/colors`
-
 autoload -U zutil
 autoload -U compinit
 autoload -U complist
@@ -55,6 +52,8 @@ bindkey '\e[B' history-substring-search-down              # DOWN
 # Bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+eval $( dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
 
 echo $STY | egrep -e "[0-9]+\.vim$" && vim
 echo $STY | egrep -e "[0-9]+\.rs$" && bundle exec rails s
