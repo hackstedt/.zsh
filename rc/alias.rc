@@ -86,3 +86,12 @@ alias gh="git push"
 alias gim="vim -p \$(git status --short | sed -n 's/^ M //p')"
 alias gacd="git add .; git commit -am \"\$(date +\"%d.%m.%Y - %H:%M Uhr\")\""
 gll() {git log --author='Sven' --no-merges --pretty='%+n%+cr%+an%+cD%+s%+H' -6 --stat --reverse | pr -2 -t -s\| -W$COLUMNS}
+
+alias dh='dirs -v'
+ds () {
+  local dir
+  select dir in $dirstack; do
+    [[ -n "$dir" ]] && cd $dir || :
+    break
+  done
+}

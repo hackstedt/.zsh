@@ -11,6 +11,5 @@ setopt HISTIGNORESPACE
 setopt HISTREDUCEBLANKS
 setopt HISTVERIFY
 
-DIRSTACKSIZE=11
+DIRSTACKSIZE=24
 setopt autopushd pushdminus
-alias dh='dirs -v'
