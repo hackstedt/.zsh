@@ -10,3 +10,7 @@ setopt HISTIGNORE_DUPS
 setopt HISTIGNORESPACE
 setopt HISTREDUCEBLANKS
 setopt HISTVERIFY
+
+DIRSTACKSIZE=11
+setopt autopushd pushdminus
+alias dh='dirs -v'
