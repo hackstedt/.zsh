@@ -2,7 +2,10 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias ls="ls --color=auto"
 alias l="ls -aFlh --group-directories-first --color=auto --time-style=+'%d.%m.%Y %H:%M:%S'"
+# Show the 10 newest files/directories in current directory
 alias lt="ls -aFlhtr --group-directories-first --color=auto --time-style=+'%d.%m.%Y %H:%M:%S' | tail"
+# Show the 10 newest files combined in current and sub directories
+alias ft="find . -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head"
 alias cl="clear"
 alias i="sudo apt-get install"
 alias acs="apt-cache search"
