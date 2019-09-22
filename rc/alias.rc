@@ -2,7 +2,10 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias ls="ls --color=auto"
 alias l="ls -aFlh --group-directories-first --color=auto --time-style=+'%d.%m.%Y %H:%M:%S'"
+# Show the 10 newest files/directories in current directory
 alias lt="ls -aFlhtr --group-directories-first --color=auto --time-style=+'%d.%m.%Y %H:%M:%S' | tail"
+# Show the 10 newest files combined in current and sub directories
+alias ft="find . -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head"
 alias cl="clear"
 alias i="sudo apt-get install"
 alias acs="apt-cache search"
@@ -13,7 +16,8 @@ alias s="sudo"
 alias reboot="shutdown -r now"
 alias cd..="cd .."
 alias mkdir_date="mkdir $(date +'%d_%m_%Y-%H_%MUhr')"
-alias lvim="vim -c':e#<1'"
+alias vl="vim -c':e#<1'"
+alias v="vim"
 
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=2 --no-init --window=-4'
 # Set colors for less. Borrowed from https://wiki.archlinux.org/index.php/Color_output_in_console#less .
@@ -65,10 +69,8 @@ alias tmm="tunnelmagick `date +%s`"
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
 
-vl=$(find /usr/share/vim -name 'less.vim' | grep macros)
-if [ ! -z $vl  ]; then
-  alias vl="vim -u $vl"
-fi
+vim_less_macro=$(find /usr/share/vim -name 'less.vim' | grep macros)
+[ ! -z $vim_less_macro ] && alias lv="vim -u $vim_less_macro"
 
 # git
 alias gs="git status"
