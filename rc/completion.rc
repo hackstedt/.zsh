@@ -15,6 +15,10 @@ zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' special-dirs true
 
+# $ scp file username@<TAB><TAB>:/<TAB>
+zstyle ':completion:*:(ssh|scp|ftp|rsync):*' hosts $hosts
+zstyle ':completion:*:(ssh|scp|ftp|rsync):*' users $users
+
 # Group results by category
 zstyle ':completion:*' group-name ''
 
