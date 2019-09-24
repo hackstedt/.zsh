@@ -5,6 +5,25 @@ PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/X11:$HOME/.rvm/bin:$PATH
 fpath=($HOME/.zsh/functions $fpath)
 
 
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Enable Ctrl-x-e to edit command line
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+
 bindkey ';5A' history-search-backward   # Ctr+UP
 bindkey ';5B' history-search-forward    # Ctr+DOWN
 bindkey '^K' kill-whole-line
@@ -56,25 +75,6 @@ autoload colors; colors
 autoload -Uz compinit; compinit
 autoload -Uz promptinit; promptinit
 autoload -U complist
-
-
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-zmodload zsh/complist
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-# Enable Ctrl-x-e to edit command line
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
 
 echo $STY | egrep -e "[0-9]+\.vim$" && vim
 echo $STY | egrep -e "[0-9]+\.rs$" && bundle exec rails s
