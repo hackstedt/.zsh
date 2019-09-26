@@ -62,6 +62,8 @@ bindkey '\e[B' history-substring-search-down              # DOWN
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+source ~/.zsh/plugins/zsh-autopair/autopair.zsh
+
 eval $(dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
 
 # Resource files
