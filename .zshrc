@@ -62,7 +62,7 @@ bindkey '\e[B' history-substring-search-down              # DOWN
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-eval $( dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
+eval $(dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
 
 # Resource files
 for file in $HOME/.zsh/rc/*.rc; do
