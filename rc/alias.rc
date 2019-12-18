@@ -32,10 +32,17 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-gupy () {python -m SimpleHTTPServer 7777 & echo $! > /tmp/python_SimpleHTTPServer_pid & guard -G ~/.config/Guardfile -w $1; kill $(cat /tmp/python_SimpleHTTPServer_pid)}
+gupy () {
+  cd "$1"
+  pidFile="/tmp/python_SimpleHTTPServer_pid"
+  (( $+commands[python3] )) && (python3 -m http.server 7777 & echo $! > $pidFile) || (python -m SimpleHTTPServer 7777 & echo $! > $pidFile)
+    guard -G ~/.config/Guardfile -w .
+    kill $(cat /tmp/python_SimpleHTTPServer_pid)
+    rm -f $pidFile
+}
 alias guardthis="guard -G ~/.config/Guardfile -w ."
 
-alias 7777="python -m SimpleHTTPServer 7777"
+alias 7777="(( $+commands[python3] )) && python3 -m http.server 7777 || python -m SimpleHTTPServer 7777"
 
 rg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp} $1 .}
 
