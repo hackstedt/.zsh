@@ -18,6 +18,7 @@ alias cd..="cd .."
 alias mkdir_date="mkdir $(date +'%d_%m_%Y-%H_%MUhr')"
 alias vl="vim -c':e#<1'"
 alias v="vim"
+alias vn="vim -u NONE"
 
 alias -g G='| fgrep -i'
 
