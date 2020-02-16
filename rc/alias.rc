@@ -36,9 +36,9 @@ gupy () {
   cd "$1"
   pidFile="/tmp/python_SimpleHTTPServer_pid"
   (( $+commands[python3] )) && (python3 -m http.server 7777 & echo $! > $pidFile) || (python -m SimpleHTTPServer 7777 & echo $! > $pidFile)
-    guard -G ~/.config/Guardfile -w .
-    kill $(cat /tmp/python_SimpleHTTPServer_pid)
-    rm -f $pidFile
+  guard -G ~/.config/Guardfile -w .
+  kill $(cat /tmp/python_SimpleHTTPServer_pid)
+  rm -f $pidFile
 }
 alias guardthis="guard -G ~/.config/Guardfile -w ."
 
