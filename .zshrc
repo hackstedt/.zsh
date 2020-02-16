@@ -17,11 +17,10 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# Enable Ctrl-x-e to edit command line
+# Enable Ctrl-v to edit command line
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
+bindkey '^v' edit-command-line
 
 
 bindkey ';5A' history-search-backward   # Ctr+UP
