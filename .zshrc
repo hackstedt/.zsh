@@ -66,7 +66,7 @@ source ~/.zsh/plugins/zsh-autopair/autopair.zsh
 eval $(dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
 
 # Resource files
-for file in $HOME/.zsh/rc/*.rc; do
+for file in $HOME/.zsh/rc/*; do
 	source $file
 done
 
