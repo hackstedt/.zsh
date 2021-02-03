@@ -38,7 +38,7 @@ bindkey ';2D' backward-word
 bindkey ';2C' forward-word
 
 
-source ~/.profile
+[ -f "~/.profile" ] && source ~/.profile
 
 # Regarding to the zsh-history-substring-search - Readme:
 # "If you want to use zsh-syntax-highlighting along with this script,
