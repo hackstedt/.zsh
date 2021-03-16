@@ -86,8 +86,10 @@ vim_less_macro=$(find /usr/share/vim -name 'less.vim' | grep macros)
 # git
 alias gs="git status"
 alias ga="git add"
+alias gaa="git add --all"
 alias gb="git branch"
 alias gc="git commit"
+alias gcm="git commit -m"
 alias gd="git diff"
 alias go="git checkout"
 alias gk="gitk --all&"
