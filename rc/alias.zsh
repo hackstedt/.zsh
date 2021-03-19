@@ -52,7 +52,7 @@ fim () {
     vim $(sed -n "${1}p" ~/.fimds)
   else
     param=$([[ "$1" == "f" ]] && echo "$2" || echo "$1")
-    find "$PWD" -name "$param" | tee ~/.fimds | nl | GREP_COLORS='mt=37' grep --color "$PWD"/
+    find "$PWD" -name "$param" | tee ~/.fimds | nl | sed -nr "s#(.*)($PWD/)(.*)#\o033[34m\1\o033[0m\o033[0m\2\o033[39m\o033[34m\3\o033[0m#p"
   fi
 }
 
