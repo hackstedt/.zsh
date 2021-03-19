@@ -1,6 +1,6 @@
 #environement variables
 #export LD_LIBRARY_PATH=/usr/lib/gcc/i486-pc-linux-gnu/4.4.2
-export HISTORY_IGNORE='(a|l[s]#( *)#|jobs|[bf]g( *)#|exit|reset|cl(ear)#|cd[(..)( ..)]#|pwd)'
+export HISTORY_IGNORE='(alias( *)#|l[ls]#( *)#|jobs|[bf]g( *)#|exit|reset|cl(ear)#|cd[(..)( ..)]#|pwd|uu|dist-upgrade|aptclean|ac[sp]( *)#)'
 export HISTSIZE=5120
 export SAVEHIST=5120
 export HISTFILE=~/.zsh/.history
