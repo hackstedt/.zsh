@@ -33,7 +33,7 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-gupy () {
+gupy() {
   cd "$1"
   pidFile="/tmp/python_SimpleHTTPServer_pid"
   (( $+commands[python3] )) && (python3 -m http.server 7777 & echo $! > $pidFile) || (python -m SimpleHTTPServer 7777 & echo $! > $pidFile)
@@ -45,9 +45,9 @@ alias guardthis="guard -G ~/.config/Guardfile -w ."
 
 alias 7777="(( $+commands[python3] )) && python3 -m http.server 7777 || python -m SimpleHTTPServer 7777"
 
-rg () {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp} $1 .}
+rg() {rgrep --color -insTI -A3 -B2 --exclude-dir={log,tmp} $1 .}
 
-fim () {
+fim() {
   if [[ "$1" =~ ^[0-9]+$ ]]; then
     vim $(sed -n "${1}p" ~/.fimds)
   else
@@ -56,11 +56,11 @@ fim () {
   fi
 }
 
-bu () {cp $1{,~`date +%Y-%m-%d_%Hh%M`}}
+bu() {cp $1{,~`date +%Y-%m-%d_%Hh%M`}}
 
 # alias rs="bundle exec rails s"
 if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
-	malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
+  malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
 fi
 alias ts="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec thin start -p 3000"
 alias rs="RAILS_ENV=development bundle exec rails s"
@@ -103,7 +103,7 @@ alias gacd="git add .; git commit -am \"\$(date +\"%d.%m.%Y - %H:%M Uhr\")\""
 gll() {git log --author='Sven' --no-merges --pretty='%+n%+cr%+an%+cD%+s%+H' -6 --stat --reverse | pr -2 -t -s\| -W$COLUMNS}
 
 alias dh='dirs -v'
-ds () {
+ds() {
   local dir
   select dir in $dirstack; do
     [[ -n "$dir" ]] && cd $dir || :
