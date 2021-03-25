@@ -21,6 +21,12 @@ alias vl="vim -c':e#<1'"
 alias v="vim"
 alias vn="vim -u NONE"
 
+follow() {
+  IFS=$'\n'
+  PS3="cd to: "
+  select dir in $(lsof -d cwd 2>/dev/null | awk "(/zsh|bash/) && \$NF != \"$PWD\" {print substr(\$0, index(\$0,\$9))}"); do cd $dir; break; done
+}
+
 alias -g G='| fgrep -i'
 
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=2 --no-init --window=-4'
