@@ -58,8 +58,16 @@ fim() {
     vim $(sed -n "${1}p" ~/.fimds)
   else
     find_pattern=$([[ "$1" == "f" ]] && echo "$2" || echo "$1")
-    sed_pattern=$(sed -rn "s#\*#\.\*#gp" <<< "$find_pattern")
-    find "$PWD" -name "$find_pattern" | tee ~/.fimds | nl | sed -nr "s#(.*)($PWD/)(.*/)(.*)($sed_pattern)(.*)#\o033[34m\1\o033[0m\o033[0m\o033[2;34m\2\o033[0m\o033[0m\o033[39m\o033[34m\3\o033[0m\o033[95m\4\o033[0m\o033[1;95m\5\o033[0m\o033[95m\6\o033[0m#p"
+    sed_pattern=$(tr -d '*' <<< "$find_pattern")
+    find "$PWD" -name "$find_pattern" | tee ~/.fimds | nl -w2 -s' ' |\
+      sed -r "s#$PWD/#//#; s#([^/]*)(/)(.*/)(.*)($sed_pattern)(.*)#\
+\o033[34m\1\o033[0m\
+\o033[2;34m$PWD\o33[0m\
+\o033[34m\3\o033[0m\
+\o033[95m\4\o033[0m\
+\o033[1;95m\5\o033[0m\
+\o033[95m\6\o033[0m\
+#"
   fi
 }
 
