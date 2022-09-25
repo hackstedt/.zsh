@@ -47,6 +47,7 @@ and for the plugins below (if it's not created automatically by the steps below)
         mkdir ~/.zsh/plugins/zsh-history-substring-search
         mkdir ~/.zsh/plugins/LS_COLORS
         mkdir ~/.zsh/plugins/zsh-autopair
+        mkdir ~/.zsh/plugins/zsh-autosuggestions
 
 Follow the instructions on this side, to install (in the folder you just made) the zsh-syntax-highlighting:
 
@@ -79,3 +80,11 @@ https://github.com/hlissner/zsh-autopair
 Shortcut:
 
         git clone https://github.com/hlissner/zsh-autopair.git ~/.zsh/plugins/zsh-autopair
+
+Follow the instructions on this side, to install (in the folder you just made) the zsh-autopair:
+
+https://github.com/zsh-users/zsh-autosuggestions
+
+Shortcut:
+
+        git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions

@@ -63,6 +63,11 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 source ~/.zsh/plugins/zsh-autopair/autopair.zsh
 
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
+bindkey '^[e' autosuggest-execute
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
+
 eval $(dircolors -b ~/.zsh/plugins/LS_COLORS/LS_COLORS)
 
 # Resource files
