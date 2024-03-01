@@ -72,7 +72,7 @@ fim() {
   fi
 }
 
-bu() {cp $1{,~`date +%Y-%m-%d_%Hh%M`}}
+bu () { cp -a ${1%/}{,--$(date +%Y-%m-%d_%Hh%M)}; }
 
 # alias rs="bundle exec rails s"
 if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
