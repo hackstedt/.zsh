@@ -79,9 +79,9 @@ if [[ -e "/usr/lib/libtcmalloc_minimal.so.?" ]]; then
   malloc=`ls /usr/lib/libtcmalloc_minimal.so.?`
 fi
 alias ts="RAILS_ENV=development RUBY_GC_MALLOC_LIMIT=90000000; LD_PRELOAD=$malloc bundle exec thin start -p 3000"
-alias rs="RAILS_ENV=development bundle exec rails s"
-alias rc="bundle exec rails c"
-alias rcs="bundle exec rails c --sandbox"
+alias rs="bin/rails s"
+alias rc="bin/rails c"
+alias rcs="bin/rails c --sandbox"
 alias bbb="echo '\e[0;36mrun: bundle install... \e[0m';
             bundle install;
             echo '\e[0;36mrun: bundle exec rake db:migrate... \e[0m';
