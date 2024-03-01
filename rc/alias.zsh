@@ -126,3 +126,24 @@ ds() {
     break
   done
 }
+
+rom() {
+  clear
+
+  if [ -x "$1"  ]; then
+    _command="./$@"
+  else
+    set -- "$(which $1)" "${@:2}"
+    _command="$@"
+  fi
+
+  eval "$_command"
+
+  inotifywait -m -e close_write . |
+    while read -r directory events filename; do
+      if [ -f "$filename" ]; then
+        clear
+        eval "$_command"
+      fi
+    done
+}
